@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>⚛️ React Sample App</h1>
-        <p className="subtitle">A minimal React app powered by Vite — CI/CD enabled</p>
+        <p className="subtitle">Deployed via Docker CI/CD Pipeline</p>
       </header>
 
       <main className="app-main">
