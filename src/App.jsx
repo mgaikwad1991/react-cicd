@@ -1,14 +1,22 @@
 import { useState } from 'react'
+import { useTheme } from './context/ThemeContext'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  // Grab theme data directly from context — no props needed!
+  const { isDark, toggleTheme } = useTheme()
+
   return (
-    <div className="app">
+    <div className={`app ${isDark ? 'dark' : ''}`}>
       <header className="app-header">
-        <h1>⚛️ React Sample App</h1>
+        <h1>React Sample App</h1>
         <p className="subtitle">Deployed via Docker CI/CD Pipeline</p>
+        {/* Toggle button — uses context directly */}
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDark ? 'Light Mode' : 'Dark Mode'}
+        </button>
       </header>
 
       <main className="app-main">
@@ -23,13 +31,9 @@ function App() {
         </div>
 
         <div className="card">
-          <h2>Getting Started</h2>
-          <p>Edit <code>src/App.jsx</code> and save to see your changes instantly.</p>
-          <ul>
-            <li>⚡ Vite for fast dev server &amp; builds</li>
-            <li>⚛️ React 18 with hooks</li>
-            <li>🎨 Plain CSS styling</li>
-          </ul>
+          <h2>Context API Demo</h2>
+          <p>Current theme: <strong>{isDark ? 'Dark' : 'Light'}</strong></p>
+          <p>This component reads theme directly from Context — no props passed!</p>
         </div>
       </main>
     </div>

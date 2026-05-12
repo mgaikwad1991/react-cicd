@@ -116,3 +116,37 @@ button.reset:hover {
   color: #444;
   font-size: 0.95rem;
 }
+
+/* Dark mode styles — applied when .dark class is on .app */
+.app.dark {
+  background: #1a1a2e;
+  color: #eee;
+}
+
+.app.dark .card {
+  background: #16213e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.app.dark .card h2 {
+  color: #61dafb;
+}
+
+.app.dark .card p,
+.app.dark .card ul li {
+  color: #aaa;
+}
+
+.theme-toggle {
+  margin-top: 1rem;
+  background: transparent;
+  border: 2px solid #61dafb;
+  color: #61dafb;
+  font-size: 0.9rem;
+  padding: 0.4rem 1.2rem;
+}
+
+.theme-toggle:hover {
+  background: #61dafb;
+  color: #20232a;
+}
